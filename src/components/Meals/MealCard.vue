@@ -4,7 +4,7 @@
       <h1>{{ meal.name }}</h1>
       <div>
       <button class="btn">Remove</button>
-      <button class="btn">Add to "This weeks menu"</button>
+      <button class="btn">Add</button>
       </div>
     </div>
 </template>
