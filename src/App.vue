@@ -37,5 +37,11 @@ body, html{
 .d-flex{
   display: flex;
 }
+.column{
+  flex-direction: column;
+}
+.row{
+  flex-direction: row;
+}
 
 </style>
