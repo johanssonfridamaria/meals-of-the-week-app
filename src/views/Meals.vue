@@ -3,7 +3,7 @@
     <h1>Meals</h1>
     <h2>Choose meals to add to this weeks menu</h2>
     <h2>Difficult to choose? Click on this button to get a random meal added to this weeks menu</h2>
-    <button>Choose for me!</button>
+    <button class="btn">Choose for me!</button>
     <div class="d-flex row-wrap">
     <mealCard v-for="(meal, index) in meals" :key="index" :meal="meal"/>
     </div>
