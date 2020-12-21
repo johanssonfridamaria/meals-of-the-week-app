@@ -1,27 +1,31 @@
 <template>
   <div>
-    Meals
-    <div class="meal-card" v-for="(meal, index) in meals" :key="index">
-      <h1>{{ meal.index }}</h1>
-      <h1>{{ meal.name }}</h1>
-      <button class="btn">Remove</button>
-      <button class="btn">Add to "This weeks menu"</button>
+    <h1>Meals</h1>
+    <h2>Choose meals to add to this weeks menu</h2>
+    <h2>Difficult to choose? Click on this button to get a random meal added to this weeks menu</h2>
+    <button>Choose for me!</button>
+    <div class="d-flex row-wrap">
+    <mealCard v-for="(meal, index) in meals" :key="index" :meal="meal"/>
     </div>
   </div>
 </template>
 
 <script>
+import MealCard from '../components/Meals/MealCard'
 import { mapGetters } from 'vuex';
 
 export default {
   name: 'Meals',
-  // components: {},
-  // methods: {},
+  components: {
+    MealCard,
+  },
   computed: {
     ...mapGetters(['meals']),
   },
-  // created(){
 
-  // }
 };
 </script>
+
+<style scoped>
+
+</style>
