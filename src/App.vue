@@ -22,4 +22,16 @@ export default {
 </script>
 
 <style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body, html{
+  height: 100%;
+}
+.container{
+  width: 80%;
+  margin: auto;
+}
 </style>
