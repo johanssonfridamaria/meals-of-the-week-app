@@ -48,7 +48,9 @@ body, html{
   flex-flow: row wrap;
 }
 h1{
-  font-family: 'Amatic SC', cursive;;
+  font-family: 'Amatic SC', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 .btn{
   background: black;
