@@ -1,5 +1,10 @@
 <template>
-  <footer>Footer</footer>
+  <footer class="footer">
+    <div class="container">
+      <p>Copyright © 2020 Frida Johansson</p>
+      <p>School project @ Lexicon Yrkesutbildning</p>
+    </div>
+  </footer>
 </template>
 
 <script>
@@ -8,5 +13,9 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+footer {
+  background-color: beige;
+  padding: 1rem 0;
+}
 </style>
