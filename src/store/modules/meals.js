@@ -1,11 +1,15 @@
-export default{
+export default {
   state: {
-    meals: [],
+    meals: [
+      { name: 'PalakPaneer' },
+      { name: 'Pasta' },
+      { name: 'Pizza' }
+    ],
     thisWeeksMenu: [],
-
   },
-  getters:{
-
+  getters: {
+    meals: state => state.meals,
+    thisWeeksMenu: state => state.thisWeeksMenu
   },
   mutations: {
 
