@@ -34,4 +34,8 @@ body, html{
   width: 80%;
   margin: auto;
 }
+.d-flex{
+  display: flex;
+}
+
 </style>
