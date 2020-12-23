@@ -1,19 +1,22 @@
 <template>
     <div class="meal-card d-flex column">
-      <h1>{{ meal.index }}</h1>
       <h1>{{ meal.name }}</h1>
       <div>
-      <button class="btn">Remove</button>
-      <button class="btn">Add</button>
+      <button class="btn" @click="delMeal(meal)">Remove</button>
+      <button class="btn" @click="addToMenu(meal)">Add</button>
       </div>
     </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 
 export default {
   name: 'MealCard',
-  props: ['meal']
+  props: ['meal', 'id'],
+  methods: {
+    ...mapActions(['delMeal', 'addToMenu'])
+  }
 };
 </script>
 
