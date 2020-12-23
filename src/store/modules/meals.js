@@ -1,12 +1,12 @@
 export default {
   state: {
     meals: [
-      { name: 'PalakPaneer',},
-      { name: 'Pasta' },
-      { name: 'Pizza' }
+      { name: 'PalakPaneer', menu: false},
+      { name: 'Pasta', menu: true },
+      { name: 'Pizza', menu: false }
     ],
     thisWeeksMenu: [],
-    randomMeal: ''
+    randomMeal: '',
   },
   getters: {
     meals: state => state.meals,
@@ -34,6 +34,6 @@ export default {
     },
     addToMenu: ({commit}, meal) => {
       commit('ADD_TO_MENU', meal)
-    }
+    },
   }
 }
