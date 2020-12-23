@@ -62,5 +62,9 @@ h1{
   cursor: pointer;
   color: white;
 }
+.dark{
+  background: black;
+  color: white;
+}
 
 </style>
