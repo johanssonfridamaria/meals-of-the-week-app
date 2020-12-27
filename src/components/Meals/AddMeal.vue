@@ -2,7 +2,7 @@
   <div>
     <label for="name">Name on meal</label>
     <input type="text" id="name" v-model="name" />
-    <button @click="add">Add</button>
+    <button class="btn" @click="add">Add</button>
   </div>
 </template>
 
