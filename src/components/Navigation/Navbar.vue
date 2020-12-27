@@ -5,17 +5,19 @@
       <router-link class="nav-link" to="/">Meals</router-link>
       <router-link class="nav-link" to="/menu">This weeks menu</router-link>
     </div>
-    <button @click="setTheme()" >Change theme</button>
+    <button class="btn" @click="setTheme()" >Change theme</button>
   </nav>
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex';
+import { mapActions } from 'vuex';
+
 export default {
   name: 'Navbar',
   methods: {
     ...mapActions(['setTheme'])
-  }
+  },
+
 };
 </script>
 
