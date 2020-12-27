@@ -1,6 +1,6 @@
 export default {
   state: {
-    darkTheme: false,
+    darkTheme: true,
   },
   getters: {
     darkTheme: state => state.darkTheme,
