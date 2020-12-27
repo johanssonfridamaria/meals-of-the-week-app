@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <h1>This weeks menu</h1>
     <div class="d-flex row-wrap">
       <mealCard v-for="(meal, index) in thisWeeksMenu" :key="index" :meal="meal" :id="index" />
