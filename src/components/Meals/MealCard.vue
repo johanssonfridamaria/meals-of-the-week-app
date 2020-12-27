@@ -1,25 +1,34 @@
 <template>
-    <div class="meal-card d-flex column" :class="{dark: darkTheme }">
-      <h1>{{ meal.name }}</h1>
-      <div>
-      <button class="btn round-btn d-flex" @click="delMeal(meal)"><i class="fas fa-minus"></i></button>
-      <button v-if="meal.menu" class="btn round-btn d-flex" @click="addToMenu(meal)"><i class="fas fa-plus"></i></button>
-      <button v-else class="btn round-btn d-flex" @click="addToMenu(meal)"><i class="fas fa-check"></i></button>
-      </div>
+  <div class="mx-1 meal-card">
+    <div class=" d-flex row">
+      <h1 class="text-center">{{ meal.name }}</h1>
+      <!-- <div> -->
+      <button class="btn round-btn d-flex" @click="delMeal(meal)">
+        <i class="fas fa-minus"></i>
+      </button>
+      <button
+        v-if="meal.menu"
+        class="btn round-btn d-flex"
+        @click="addToMenu(meal)"
+      >
+        <i class="fas fa-plus"></i>
+      </button>
+      <button v-else class="btn round-btn d-flex" @click="addToMenu(meal)">
+        <i class="fas fa-check"></i>
+      </button>
+      <!-- </div> -->
     </div>
+  </div>
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex';
+import { mapActions } from 'vuex';
 
 export default {
   name: 'MealCard',
   props: ['meal', 'id'],
-  computed: {
-    ...mapGetters(['darkTheme'])
-  },
   methods: {
-    ...mapActions(['delMeal', 'addToMenu'])
+    ...mapActions(['delMeal', 'addToMenu']),
   },
 };
 </script>
@@ -27,12 +36,14 @@ export default {
 <style scoped>
 .meal-card {
   max-width: 40rem;
-  margin: 2rem auto;
   padding: 1rem;
-  border: 0.2rem solid black;
+  border: 0.1rem solid transparent;
   border-radius: 1rem;
+  background: #f9f9f9;
+  color: #111;
+  align-items: center;
 }
-.round-btn{
+.round-btn {
   width: 2.5rem;
   height: 2.5rem;
   font-size: 1.3rem;
@@ -40,7 +51,6 @@ export default {
   border-radius: 50%;
   align-items: center;
   justify-content: center;
-  margin: 1rem;
-  }
-
+  margin-left: 1rem;
+}
 </style>
