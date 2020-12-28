@@ -1,6 +1,6 @@
 <template>
   <div class="mx-1 meal-card">
-    <div class=" d-flex row">
+    <div class=" d-flex row meal-content">
       <h1 class="text-center">{{ meal.name }}</h1>
       <!-- <div> -->
       <button class="btn round-btn d-flex" @click="delMeal(meal)">
@@ -28,7 +28,7 @@ export default {
   name: 'MealCard',
   props: ['meal', 'id'],
   methods: {
-    ...mapActions(['delMeal', 'addToMenu']),
+    ...mapActions(['delMeal', 'addToMenu',]),
   },
 };
 </script>
@@ -52,5 +52,8 @@ export default {
   align-items: center;
   justify-content: center;
   margin-left: 1rem;
+}
+.meal-content{
+  align-items: center;
 }
 </style>
