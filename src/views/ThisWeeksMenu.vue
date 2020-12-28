@@ -2,19 +2,19 @@
   <div class="container">
     <h1>This weeks menu</h1>
     <div class="d-flex row-wrap">
-      <mealCard v-for="(meal, index) in thisWeeksMenu" :key="index" :meal="meal" :id="index" />
+      <mealInMenu v-for="(meal, index) in thisWeeksMenu" :key="index" :meal="meal" :id="index" />
     </div>
   </div>
 </template>
 
 <script>
-import MealCard from '../components/Meals/MealCard';
+import MealInMenu from '../components/Meals/MealInMenu';
 import { mapGetters } from 'vuex';
 
 export default {
   name: 'ThisWeeksMenu',
   components: {
-    MealCard,
+    MealInMenu,
   },
   // methods: {
   //   ...mapActions(['randomMeal'])
