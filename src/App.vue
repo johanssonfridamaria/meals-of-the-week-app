@@ -63,6 +63,9 @@ h1 {
   font-family: 'Amatic SC', cursive;
   font-size: 2.5rem;
 }
+h3{
+  margin-bottom: 0.5rem;
+}
 .btn {
   background: black;
   border: 0.1rem solid transparent;
@@ -73,8 +76,18 @@ h1 {
   cursor: pointer;
   color: #fff;
 }
+.round-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.3rem;
+  padding: 0;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
+}
 .dark {
-  background: #003559;
+  background: #314735;
   /* background: #002C4C; */
   color: #fff;
 }
