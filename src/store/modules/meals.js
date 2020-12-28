@@ -1,17 +1,19 @@
 export default {
   state: {
     meals: [
-      { name: 'PalakPaneer', menu: false},
-      { name: 'Pasta', menu: true },
-      { name: 'Pizza', menu: false }
+      { name: 'PalakPaneer'},
+      { name: 'Pasta'},
+      { name: 'Pizza'}
     ],
     thisWeeksMenu: [],
     randomMeal: '',
+    added: false,
   },
   getters: {
     meals: state => state.meals,
     thisWeeksMenu: state => state.thisWeeksMenu,
-    randomMeal: state => state.meals[Math.floor(Math.random() * state.meals.length)]
+    randomMeal: state => state.meals[Math.floor(Math.random() * state.meals.length)],
+    added: state => state.added,
   },
   mutations: {
     SET_MEALS: (state) => {
@@ -29,7 +31,13 @@ export default {
     },
     ADD_TO_MENU: (state, meal) =>{
       state.thisWeeksMenu.push(meal)
-    }
+      localStorage.setItem('thisWeeksMenu', JSON.stringify(state.thisWeeksMenu))
+    },
+    DEL_FROM_MENU: (state, meal) => {
+      state.thisWeeksMenu.splice(state.thisWeeksMenu.indexOf(meal), 1)
+      localStorage.setItem('thisWeeksMenu', JSON.stringify(state.thisWeeksMenu))
+    },
+    
   },
   actions: {
     // addRanToList: ({commit}) 
@@ -45,5 +53,8 @@ export default {
     addToMenu: ({commit}, meal) => {
       commit('ADD_TO_MENU', meal)
     },
+    delFromMenu: ({commit}, meal) => {
+      commit('DEL_FROM_MENU', meal)
+    }
   }
 }
