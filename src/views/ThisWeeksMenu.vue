@@ -1,26 +1,35 @@
 <template>
   <div class="container">
     <h1>This weeks menu</h1>
+
     <div class="d-flex row-wrap">
-      <mealInMenu v-for="(meal, index) in thisWeeksMenu" :key="index" :meal="meal" :id="index" />
+      <div v-if="menu">
+        <h2>You have not added any meals yet</h2>
+      </div>
+      <mealCard v-else
+        v-for="meal in menu"
+        :key="meal.id"
+        :meal="meal"
+        @minusClick="delFromMenu(meal)"
+      />
     </div>
   </div>
 </template>
 
 <script>
-import MealInMenu from '../components/Meals/MealInMenu';
-import { mapGetters } from 'vuex';
+import MealCard from '../components/Meals/MealCard';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'ThisWeeksMenu',
   components: {
-    MealInMenu,
+    MealCard,
   },
-  // methods: {
-  //   ...mapActions(['randomMeal'])
-  // },
+  methods: {
+    ...mapActions(['delFromMenu']),
+  },
   computed: {
-    ...mapGetters(['thisWeeksMenu', 'randomMeal']),
+    ...mapGetters(['menu', 'randomMeal']),
   },
 };
 </script>

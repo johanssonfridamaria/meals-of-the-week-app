@@ -5,25 +5,29 @@
       <router-link class="nav-link" to="/">Meals</router-link>
       <router-link class="nav-link" to="/menu">This weeks menu</router-link>
     </div>
-    <button class="btn" @click="setTheme()" >Change theme</button>
+    <button v-if=!darkTheme class="btn btn-theme" @click="setTheme()"><i class="fas fa-sun"></i></button>
+    <button v-else class="btn btn-theme" @click="setTheme()"><i class="fas fa-moon"></i></button>
   </nav>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'Navbar',
   methods: {
     ...mapActions(['setTheme'])
   },
+  computed: {
+    ...mapGetters(['darkTheme'])
+  }
 
 };
 </script>
 
 <style scoped>
 .navbar {
-  background-color: beige;
+  background-color:#53785A;
   padding: 1rem 0;
   align-items: center;
 }
@@ -40,5 +44,8 @@ export default {
   .nav-link{
     margin-bottom: 1rem;
   } */
+}
+.btn-theme{
+  background: transparent;
 }
 </style>

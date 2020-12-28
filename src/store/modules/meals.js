@@ -1,19 +1,19 @@
 export default {
   state: {
     meals: [
-      { name: 'PalakPaneer'},
-      { name: 'Pasta'},
-      { name: 'Pizza'}
+      {id:1, name: 'PalakPaneer'},
+      {id:2, name: 'Pasta'},
+      {id:3, name: 'Pizza'}
     ],
-    thisWeeksMenu: [],
+    menu: [],
     randomMeal: '',
-    added: false,
   },
   getters: {
     meals: state => state.meals,
-    thisWeeksMenu: state => state.thisWeeksMenu,
+    menu: state => state.menu,
     randomMeal: state => state.meals[Math.floor(Math.random() * state.meals.length)],
     added: state => state.added,
+    isAdded: (state) => (id) => state.menu.find(x => x.id === id)
   },
   mutations: {
     SET_MEALS: (state) => {
@@ -22,7 +22,7 @@ export default {
       }
     },
     ADD_MEAL: (state, meal) => {
-      state.meals.push({name:meal})
+      state.meals.push({id: meal.id, name:meal.name})
       localStorage.setItem('meals', JSON.stringify(state.meals))
     },
     DEL_MEAL: (state, meal) => {
@@ -30,12 +30,12 @@ export default {
       localStorage.setItem('meals', JSON.stringify(state.meals))
     },
     ADD_TO_MENU: (state, meal) =>{
-      state.thisWeeksMenu.push(meal)
-      localStorage.setItem('thisWeeksMenu', JSON.stringify(state.thisWeeksMenu))
+      state.menu.push(meal)
+      localStorage.setItem('menu', JSON.stringify(state.menu))
     },
     DEL_FROM_MENU: (state, meal) => {
-      state.thisWeeksMenu.splice(state.thisWeeksMenu.indexOf(meal), 1)
-      localStorage.setItem('thisWeeksMenu', JSON.stringify(state.thisWeeksMenu))
+      state.menu.splice(state.menu.indexOf(meal), 1)
+      localStorage.setItem('menu', JSON.stringify(state.menu))
     },
     
   },

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <label for="name">Name on meal</label>
-    <input type="text" id="name" v-model="name" />
+    <h3>Don't see anything you like? Add meals:</h3>
+    <input type="text" id="name" v-model="name" placeholder="Insert name of meal" />
     <button class="btn" @click="add">Add</button>
   </div>
 </template>

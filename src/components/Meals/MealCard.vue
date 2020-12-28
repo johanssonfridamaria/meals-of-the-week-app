@@ -1,34 +1,38 @@
 <template>
   <div class="mx-1 meal-card">
-    <div class=" d-flex row meal-content">
+    <div class="d-flex row meal-content">
       <h1 class="text-center">{{ meal.name }}</h1>
-      <!-- <div> -->
-      <button class="btn round-btn d-flex" @click="delMeal(meal)">
+      <button class="btn round-btn d-flex" @click="$emit('minusclick')">
         <i class="fas fa-minus"></i>
       </button>
       <button
-        v-if="meal.menu"
+        v-if="!isAdded(meal.id)"
         class="btn round-btn d-flex"
         @click="addToMenu(meal)"
       >
         <i class="fas fa-plus"></i>
       </button>
-      <button v-else class="btn round-btn d-flex" @click="addToMenu(meal)">
+      <button v-else class="btn round-btn d-flex"  @click="delFromMenu(meal)">
         <i class="fas fa-check"></i>
+       
       </button>
-      <!-- </div> -->
     </div>
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'MealCard',
-  props: ['meal', 'id'],
+  props: ['meal', 'added'],
+  computed: {
+    ...mapGetters(['isAdded'])
+  },
   methods: {
-    ...mapActions(['delMeal', 'addToMenu',]),
+    ...mapActions(['addToMenu', 'delFromMenu'])
+
+    
   },
 };
 </script>
@@ -43,17 +47,7 @@ export default {
   color: #111;
   align-items: center;
 }
-.round-btn {
-  width: 2.5rem;
-  height: 2.5rem;
-  font-size: 1.3rem;
-  padding: 0;
-  border-radius: 50%;
-  align-items: center;
-  justify-content: center;
-  margin-left: 1rem;
-}
-.meal-content{
+.meal-content {
   align-items: center;
 }
 </style>
