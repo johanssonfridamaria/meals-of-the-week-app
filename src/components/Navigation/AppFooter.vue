@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer class="footer" :class="{footerDark:darkTheme}">
     <div class="container text-center">
       <p>Copyright © 2020 Frida Johansson</p>
       <p>School project @ Lexicon Yrkesutbildning</p>
@@ -8,8 +8,13 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
+
 export default {
   name: 'Footer',
+   computed: {
+    ...mapGetters(['darkTheme'])
+  }
 };
 </script>
 
@@ -17,5 +22,8 @@ export default {
 footer {
   background-color:#53785A;
   padding: 1rem 0;
+}
+.footerDark{
+  color: #fff;
 }
 </style>
