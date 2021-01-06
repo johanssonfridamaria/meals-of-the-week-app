@@ -17,7 +17,7 @@ export default {
   methods: {
     ...mapActions(['addMeal']),
     add() {
-      if (this.name != '') {
+      if (this.name !== '') {
         this.addMeal(this.name);
         this.name = '';
       }
