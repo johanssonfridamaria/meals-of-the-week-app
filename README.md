@@ -1,24 +1,17 @@
 # meals-of-the-week-app
 
-## Project setup
-```
-npm install
-```
+School project during my education @Lexicon
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Task:
 
-### Compiles and minifies for production
-```
-npm run build
-```
+To build a web app that will help the user to create a weekly menu. 
+The app has one page where the user can view and select meals to the menu. The user can also add new meals and remove those he/she doesn't want. It also has a button to add a random meal to the menu. 
+The other page is the weekly menu where the user can remove one or all meals. 
 
-### Lints and fixes files
-```
-npm run lint
-```
+The app also has the functionality to change between a ligth and dark theme.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+The app is not finished yet. The design is not ready and the functionality is not done.
+
+## Tech used: 
+VUE, VUEX, HTML, CSS, JAVASCRIPT
