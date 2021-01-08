@@ -3,14 +3,14 @@
     <h1>This weeks menu</h1>
 
     <div class="d-flex row-wrap">
-      <div v-if="menu">
+      <div v-if="!menu">
         <h2>You have not added any meals yet</h2>
       </div>
       <mealCard v-else
         v-for="meal in menu"
         :key="meal.id"
         :meal="meal"
-        @minusClick="delFromMenu(meal)"
+        @minusClick="delFromMenu(meal.id)"
       />
     </div>
   </div>
