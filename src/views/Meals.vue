@@ -22,7 +22,7 @@
         v-for="meal in meals"
         :key="meal.id"
         :meal="meal"
-        @minusclick="delMeal(meal)"
+        @minusclick="delMeal(meal.id)"
       />
     </div>
   </div>
