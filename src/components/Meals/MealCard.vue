@@ -1,8 +1,8 @@
 <template>
-  <div class="mx-1 meal-card">
+  <div class="mx-1 meal-card mb-1">
     <div class="d-flex row meal-content">
       <h1 class="text-center">{{ meal.name }}</h1>
-      <button class="btn round-btn d-flex" @click="$emit('minusclick')">
+      <button class="btn round-btn d-flex" @click="$emit('minusclick', meal.id)">
         <i class="fas fa-minus"></i>
       </button>
       <button
@@ -12,7 +12,7 @@
       >
         <i class="fas fa-plus"></i>
       </button>
-      <button v-else class="btn round-btn d-flex"  @click="delFromMenu(meal)">
+      <button v-else class="btn round-btn d-flex"  @click="delFromMenu(meal.id)">
         <i class="fas fa-check"></i>
        
       </button>
