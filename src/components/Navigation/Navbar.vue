@@ -3,7 +3,7 @@
     <h1 class="text-center">What shall we eat this week?</h1>
     <div class="d-flex row my-1 ">
       <router-link class="nav-link" :class="{'text-dark': isDarkTheme }" to="/">
-        This weeks menu
+        This Weeks Menu
       </router-link>
       <router-link
         class="nav-link ml-3"
