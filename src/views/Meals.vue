@@ -46,7 +46,5 @@ export default {
 </script>
 
 <style scoped>
-/* .meal-container{
-  justify-content: center;
-} */
+
 </style>
