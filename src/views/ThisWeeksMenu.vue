@@ -1,17 +1,15 @@
 <template>
   <div class="d-flex menu-container column">
-    <div class="mb-1 card d-flex column"> 
-       <h3 >Go to <router-link class="link" :class="{'text-dark': isDarkTheme }" to="/meals">
+    <h1 class="mb-1 text-center">This weeks menu</h1>
+    <div class="card d-flex column"> 
+       <h3 class="text-center">Go to <router-link class="link" :class="{'text-dark': isDarkTheme }" to="/meals">
        Meals
-      </router-link> to find more meals to add</h3>
+      </router-link> to find meals to add to the menu</h3>
       <random-meal />
     </div>
 
 
     <div class="d-flex column menu">
-      <div class="menu-row ">
-        <h1 class="mb-1 text-center">This weeks menu</h1>
-      </div>
       <div class="menu-row" v-for="meal in menu" :key="meal.id">
         <div v-if="!menu">
           <h2>You have not added any meals yet</h2>
@@ -47,6 +45,7 @@ export default {
 <style scoped>
 .card{
 align-items: center;
+margin-bottom: 2rem;
 }
 .link{
   text-decoration: none;
@@ -59,9 +58,9 @@ align-items: center;
 }
 .menu {
   background: #fff;
-  border-bottom: 0.2rem solid #000;
   border-radius: 0.5rem;
-  padding: 2rem;
+  box-shadow: 5px 5px 10px 0 #333;
+  padding: 1rem 2rem 2rem 2rem ;
   color: #000;
   width: 100%;
   max-width: 40rem;
