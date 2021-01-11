@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex menu-container column">
-    <h1 class="mb-1 text-center">This weeks menu</h1>
+    <h1 class="mb-1 text-center">This Weeks Menu</h1>
     <div class="card d-flex column"> 
        <h3 class="text-center">Go to <router-link class="link" :class="{'text-dark': isDarkTheme }" to="/meals">
        Meals
