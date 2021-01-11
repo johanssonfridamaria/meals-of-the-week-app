@@ -1,7 +1,7 @@
 <template>
   <div>
     <navbar />
-    <div :class="{ dark: isDarkTheme }" class="pt-1 main">
+    <div :class="[ {dark: isDarkTheme, light: !isDarkTheme}]" class="pt-1 main">
       <div class="container">
         <router-view />
       </div>
@@ -61,18 +61,24 @@ html {
 .row-wrap {
   flex-flow: row wrap;
 }
-.main {
-  min-height: calc(100vh - (71.11px + 172.08px));
+.text-center {
+  text-align: center;
 }
+
 h1 {
   font-family: 'Amatic SC', cursive;
   font-size: 2.5rem;
 }
+h2 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 2rem;
+}
 h3 {
   margin-bottom: 0.5rem;
+  font-size: 1rem
 }
 .btn {
-  background: black;
+  background: #53785a;
   border: 0.1rem solid transparent;
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
@@ -91,19 +97,16 @@ h3 {
   justify-content: center;
   margin-left: 1rem;
 }
-.dark {
-  background: #314735;
-  /* background: #002C4C; */
-  color: #fff;
-}
-.text-center {
-  text-align: center;
-}
+
+/* Margin & Padding */
 .mb-1 {
   margin-bottom: 1rem;
 }
 .mt-1 {
   margin-top: 1rem;
+}
+.ml-3 {
+  margin-left: 3rem;
 }
 .my-1 {
   margin-top: 1rem;
@@ -118,5 +121,23 @@ h3 {
 }
 .pt-1 {
   padding-top: 1rem;
+}
+
+/* Main container */
+.main {
+  min-height: calc(100vh - (71.11px + 172.08px));
+}
+
+/* DarkTheme */
+.dark {
+  background: #314735;
+  color: #fff;
+}
+.light {
+  background: #f4f5f4;
+   color: #333;
+}
+.text-dark {
+  color: #fff;
 }
 </style>
