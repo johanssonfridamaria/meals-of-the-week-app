@@ -1,8 +1,10 @@
 <template>
   <div>
     <navbar />
-    <div :class="{ dark: darkTheme }" >
-      <router-view />
+    <div :class="{ dark: isDarkTheme }" class="pt-1 main">
+      <div class="container">
+        <router-view />
+      </div>
     </div>
     <appFooter />
   </div>
@@ -19,14 +21,14 @@ export default {
     Navbar,
     AppFooter,
   },
-  methods:{
-    ...mapActions(['getMeals'])
+  methods: {
+    ...mapActions(['getMeals']),
   },
-    computed: {
-    ...mapGetters(['darkTheme']),
+  computed: {
+    ...mapGetters(['isDarkTheme']),
   },
   created() {
-    this.getMeals()
+    this.getMeals();
   },
 };
 </script>
@@ -59,11 +61,14 @@ html {
 .row-wrap {
   flex-flow: row wrap;
 }
+.main {
+  min-height: calc(100vh - (71.11px + 172.08px));
+}
 h1 {
   font-family: 'Amatic SC', cursive;
   font-size: 2.5rem;
 }
-h3{
+h3 {
   margin-bottom: 0.5rem;
 }
 .btn {
@@ -91,27 +96,27 @@ h3{
   /* background: #002C4C; */
   color: #fff;
 }
-.text-center{
+.text-center {
   text-align: center;
 }
-.mb-1{
+.mb-1 {
   margin-bottom: 1rem;
 }
-.mt-1{
+.mt-1 {
   margin-top: 1rem;
 }
-.my-1{
+.my-1 {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-.mx-1{
+.mx-1 {
   margin-left: 1rem;
   margin-right: 1rem;
 }
-.pb-1{
+.pb-1 {
   padding-bottom: 1rem;
 }
-.pt-1{
+.pt-1 {
   padding-top: 1rem;
 }
 </style>
