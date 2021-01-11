@@ -1,5 +1,5 @@
 <template>
-  <div class="container pt-1">
+  <div>
     <h1 class="mb-1">Meals</h1>
     <div class="my-1">
       <h3>Difficult to choose?</h3>
@@ -8,14 +8,11 @@
       </h3>
       <button class="btn">Help me choose!</button>
     </div>
-
     <div class="my-1">
       <add-meal />
     </div>
 
-    <div>
-
-    </div>
+    <div></div>
     <h3>Select meals to this weeks menu</h3>
     <div class="d-flex row-wrap pb-1">
       <mealCard
@@ -40,10 +37,10 @@ export default {
     AddMeal,
   },
   methods: {
-    ...mapActions(['delMeal'])
+    ...mapActions(['delMeal']),
   },
   computed: {
-    ...mapGetters(['meals', 'randomMeal', 'darkTheme']),
+    ...mapGetters(['meals', 'randomMeal', 'isDarkTheme']),
   },
 };
 </script>

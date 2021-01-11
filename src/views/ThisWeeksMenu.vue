@@ -1,7 +1,6 @@
 <template>
-  <div class="container">
+  <div>
     <h1>This weeks menu</h1>
-
     <div class="d-flex row-wrap">
       <div v-if="!menu">
         <h2>You have not added any meals yet</h2>
