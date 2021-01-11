@@ -1,13 +1,13 @@
 export default {
   state: {
-    darkTheme: true,
+    isDarkTheme: true,
   },
   getters: {
-    darkTheme: state => state.darkTheme,
+    isDarkTheme: state => state.isDarkTheme,
   },
   mutations: {
     SET_THEME: (state) => {
-      state.darkTheme = !state.darkTheme
+      state.isDarkTheme = !state.isDarkTheme
     }
   },
   actions: {

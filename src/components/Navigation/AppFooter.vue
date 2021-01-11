@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer" :class="{footerDark:darkTheme}">
+  <footer class="footer" :class="{footerDark:isDarkTheme}">
     <div class="container text-center">
       <p>Copyright © 2020 Frida Johansson</p>
       <p>School project @ Lexicon Yrkesutbildning</p>
@@ -13,7 +13,7 @@ import {mapGetters} from 'vuex'
 export default {
   name: 'Footer',
    computed: {
-    ...mapGetters(['darkTheme'])
+    ...mapGetters(['isDarkTheme'])
   }
 };
 </script>
