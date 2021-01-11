@@ -1,7 +1,7 @@
 <template>
   <div>
     <navbar />
-    <div :class="[ {dark: isDarkTheme, light: !isDarkTheme}]" class="pt-1 main">
+    <div :class="[ {dark: isDarkTheme, light: !isDarkTheme}]" class="main">
       <div class="container">
         <router-view />
       </div>
@@ -74,7 +74,7 @@ h2 {
   font-size: 2rem;
 }
 h3 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   font-size: 1rem
 }
 .btn {
@@ -88,8 +88,8 @@ h3 {
   color: #fff;
 }
 .round-btn {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2rem;
+  height: 2rem;
   font-size: 1.3rem;
   padding: 0;
   border-radius: 50%;
@@ -126,6 +126,8 @@ h3 {
 /* Main container */
 .main {
   min-height: calc(100vh - (71.11px + 172.08px));
+  padding-top: 2rem;
+  padding-bottom: 3rem;
 }
 
 /* DarkTheme */
