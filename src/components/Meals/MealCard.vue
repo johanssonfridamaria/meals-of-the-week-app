@@ -5,7 +5,7 @@
       <div class="d-flex">
         <button
           class="btn round-btn d-flex"
-          @click="$emit('minusclick', meal.id)"
+          @click="delMeal(meal.id)"
         >
           <i class="fas fa-minus"></i>
         </button>
@@ -38,7 +38,7 @@ export default {
     ...mapGetters(['isAdded']),
   },
   methods: {
-    ...mapActions(['addToMenu', 'delFromMenu']),
+    ...mapActions(['addToMenu', 'delFromMenu','delMeal']),
   },
 };
 </script>
