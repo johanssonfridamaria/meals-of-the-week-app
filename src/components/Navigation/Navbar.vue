@@ -1,13 +1,13 @@
 <template>
   <nav class="navbar d-flex column" :class="{'text-dark': isDarkTheme }">
     <h1 class="text-center">What shall we eat this week?</h1>
-    <div class="d-flex row my-1 ">
-      <router-link class="nav-link" :class="{'text-dark': isDarkTheme }" to="/">
+    <div class="d-flex row my-1"  >
+      <router-link class="nav-link" to="/" :class="{'text-dark': isDarkTheme, 'text-light': !isDarkTheme }">
         This Weeks Menu
       </router-link>
       <router-link
         class="nav-link ml-3"
-        :class="{ 'text-dark': isDarkTheme }"
+        :class="{'text-dark': isDarkTheme, 'text-light': !isDarkTheme }"
         to="/meals"
         >Meals
       </router-link>
@@ -43,7 +43,6 @@ export default {
 }
 .nav-link {
   text-decoration: none;
-  color: #333;
   font-size: 1rem;
 }
 .btn-theme {
