@@ -1,3 +1,4 @@
+
 export default {
   state: {
     meals: [
@@ -6,12 +7,12 @@ export default {
       {id:3, name: 'Pizza'}
     ],
     menu: [],
-    randomMeal: '',
+    randomMeal: {},
   },
   getters: {
     meals: state => state.meals,
     menu: state => state.menu,
-    randomMeal: state => state.meals[Math.floor(Math.random() * state.meals.length)],
+    randomMeal: state => state.randomMeal,
     added: state => state.added,
     isAdded: (state) => (id) => state.menu.find(x => x.id === id)
   },
@@ -30,14 +31,28 @@ export default {
       localStorage.setItem('meals', JSON.stringify(state.meals))
     },
     ADD_TO_MENU: (state, meal) =>{
-      state.menu.push(meal)
-      localStorage.setItem('menu', JSON.stringify(state.menu))
+      let exists = state.menu.find(x => x.id === meal.id)
+      if(!exists){
+        state.menu.push(meal)
+        localStorage.setItem('menu', JSON.stringify(state.menu))
+      }
     },
     DEL_FROM_MENU: (state, id) => {
       state.menu = state.menu.filter(meal => meal.id !== id)
       localStorage.setItem('menu', JSON.stringify(state.menu))
     },
-    
+    ADD_RANDOM: (state) => {
+      state.randomMeal = state.meals[Math.floor(Math.random() * state.meals.length)]
+      let exists = state.menu.find(x => x.id === state.randomMeal.id)
+      if(!exists){
+        state.menu.push(state.randomMeal)
+        localStorage.setItem('menu', JSON.stringify(state.menu))
+      }
+    },
+    CLEAR_MENU: (state) => {
+      state.menu= '';
+      localStorage.setItem('menu', JSON.stringify(state.menu))
+    }
   },
   actions: {
     // addRanToList: ({commit}) 
@@ -55,6 +70,12 @@ export default {
     },
     delFromMenu: ({commit}, id) => {
       commit('DEL_FROM_MENU', id)
+    },
+    addRandom: ({commit}) => {
+      commit('ADD_RANDOM')
+    },
+    clearMenu: ({commit}) => {
+      commit('CLEAR_MENU')
     }
   }
 }
