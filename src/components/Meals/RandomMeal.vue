@@ -1,12 +1,20 @@
 <template>
   <div class="d-flex column section">
     <h2 class="mb-1">Difficult to choose?</h2>
-    <button class="btn">Add a random meal!</button>
+    <button @click="addRandom" class="btn">Add a random meal!</button>
   </div>
 </template>
 
 <script>
-export default {};
+import { mapActions} from 'vuex';
+export default {
+name: 'RandomMeal',
+methods: {
+    ...mapActions(['addRandom'])
+  },
+};
+
+
 </script>
 
 <style scoped>
