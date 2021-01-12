@@ -5,13 +5,7 @@
         <h1 class="mb-1 text-center">This Weeks Menu</h1>
         <h3 class="text-center">
           Go to
-          <router-link
-            class="link"
-            :class="{ 'text-dark': isDarkTheme }"
-            to="/meals"
-          >
-            Meals
-          </router-link>
+          <router-link class="link" to="/meals"> Meals </router-link>
           to find meals to add to the menu
         </h3>
       </div>
@@ -20,6 +14,12 @@
     </div>
 
     <div class="d-flex column menu">
+      <div class="menu-row">
+        <h2>Clear list</h2>
+        <button class="btn round-btn d-flex" @click="clearMenu()">
+          <i class="far fa-trash-alt"> </i>
+        </button>
+      </div>
       <div class="menu-row" v-for="meal in menu" :key="meal.id">
         <div v-if="!menu">
           <h2>You have not added any meals yet</h2>
@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 import MealInMenu from '../components/Meals/MealInMenu.vue';
 import RandomMeal from '../components/Meals/RandomMeal.vue';
 
@@ -43,8 +43,11 @@ export default {
     MealInMenu,
     RandomMeal,
   },
+  methods: {
+    ...mapActions(['clearMenu'])
+  },
   computed: {
-    ...mapGetters(['menu', 'randomMeal']),
+    ...mapGetters(['menu']),
   },
 };
 </script>
@@ -75,7 +78,4 @@ export default {
   align-content: center;
   align-items: center;
 }
-/* .menu-row h1{
-  text-align: center;
-} */
 </style>
