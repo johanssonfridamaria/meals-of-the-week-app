@@ -12,3 +12,5 @@ The app also has the functionality to change between a ligth and dark theme.
 
 ## Tech used: 
 VUE, VUEX, HTML, CSS, JAVASCRIPT
+
+### View it here: https://meals-of-the-week.netlify.app/meals
