@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-1 meal-card mb-1">
+  <div class="meal-card">
     <div class="d-flex row meal-body">
       <h1 class="text-center">{{ meal.name }}</h1>
       <div class="d-flex">
@@ -45,7 +45,6 @@ export default {
 
 <style scoped>
 .meal-card {
-  max-width: 40rem;
   padding: 1rem;
   border: none;
   border-radius: 1rem;
@@ -53,9 +52,17 @@ export default {
   background: #ccc;
   color: #333;
   align-items: center;
+  margin-bottom: 1rem;
 }
 .meal-body {
   align-items: center;
   justify-content: space-between;
+}
+
+@media (min-width: 592px) {
+  .meal-card {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 }
 </style>
