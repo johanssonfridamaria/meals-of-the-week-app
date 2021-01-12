@@ -76,11 +76,15 @@ h2 {
 h3 {
   font-size: 1rem
 }
+p {
+  font-size: 0.8rem ;
+  margin-bottom: 0.5rem;
+}
 .btn {
   background: #53785a;
-  border: 0.1rem solid transparent;
+  border: none;
   border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0.7rem 1.2rem;
   font-size: 1rem;
   outline: none;
   cursor: pointer;
@@ -111,7 +115,7 @@ h3 {
 
 /* Main container */
 .main {
-  min-height: calc(100vh - (71.11px + 172.08px));
+  min-height: calc(100vh - (94.4px + 172.08px));
   padding-top: 2rem;
   padding-bottom: 3rem;
 }
