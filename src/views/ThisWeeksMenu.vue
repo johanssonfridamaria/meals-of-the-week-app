@@ -24,7 +24,7 @@
         <div v-if="!menu">
           <h2>You have not added any meals yet</h2>
         </div>
-        <mealInMenu v-else :meal="meal" @minusClick="delFromMenu(meal.id)" />
+        <mealInMenu v-else :meal="meal" />
       </div>
       <div class="menu-row"></div>
       <div class="menu-row"></div>
@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters } from 'vuex';
 import MealInMenu from '../components/Meals/MealInMenu.vue';
 import RandomMeal from '../components/Meals/RandomMeal.vue';
 
@@ -42,9 +42,6 @@ export default {
   components: {
     MealInMenu,
     RandomMeal,
-  },
-  methods: {
-    ...mapActions(['delFromMenu']),
   },
   computed: {
     ...mapGetters(['menu', 'randomMeal']),
