@@ -21,7 +21,7 @@ export default {
 <style scoped>
 footer {
   background-color:#53785A;
-  padding: 1rem 0;
+  padding: 1.5rem 1rem;
 }
 .footerDark{
   color: #fff;
