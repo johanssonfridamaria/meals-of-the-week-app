@@ -1,7 +1,7 @@
 <template>
   <div>
     <navbar />
-    <div :class="[ {dark: isDarkTheme, light: !isDarkTheme}]" class="main">
+    <div :class="[{ dark: isDarkTheme, light: !isDarkTheme }]" class="main">
       <div class="container">
         <router-view />
       </div>
@@ -74,10 +74,10 @@ h2 {
   font-size: 2rem;
 }
 h3 {
-  font-size: 1rem
+  font-size: 1rem;
 }
 p {
-  font-size: 0.8rem ;
+  font-size: 0.8rem;
   margin-bottom: 0.5rem;
 }
 .btn {
@@ -127,12 +127,15 @@ p {
 }
 .light {
   background: #f4f5f4;
-   color: #333;
+  color: #333;
 }
 .text-dark {
   color: #fff;
 }
-.section{
+.text-light {
+    color: #333;
+}
+.section {
   align-items: center;
   margin-bottom: 1.5rem;
 }
