@@ -1,8 +1,15 @@
 <template>
-  <div>
-    <h3>Don't see anything you like? Add meals:</h3>
-    <input type="text" id="name" v-model="name" placeholder="Insert name of meal" />
-    <button class="btn" @click="add">Add</button>
+  <div class="d-flex column section">
+    <h2 class="text-center mb-1">Don't see anything you like? Add meals:</h2>
+    <div class="input-group d-flex">
+      <input
+        type="text"
+        id="name"
+        v-model="name"
+        placeholder="Insert name of meal"
+      />
+      <button class="btn" @click="add">Add</button>
+    </div>
   </div>
 </template>
 
@@ -26,5 +33,6 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+
 </style>
