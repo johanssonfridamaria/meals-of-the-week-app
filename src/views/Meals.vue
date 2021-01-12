@@ -1,12 +1,14 @@
 <template>
   <div>
-    <h1 class="mb-1 text-center">Meals</h1>
-    <h3 class="text-center">Select meals bellow to This Weeks Menu</h3>
-    <div class="my-1">
-      <random-meal />
-      <add-meal />
+    <div class="section">
+      <h1 class="mb-1 text-center">Meals</h1>
+      <h3 class="text-center">Select meals bellow to This Weeks Menu</h3>
     </div>
-    <div class="d-flex row-wrap pb-1">
+    <div class="cards d-flex column">
+      <add-meal />
+      <random-meal />
+    </div>
+    <div class="d-flex meal-container">
       <mealCard
         v-for="meal in meals"
         :key="meal.id"
@@ -40,4 +42,23 @@ export default {
 </script>
 
 <style scoped>
+.meal-container {
+  flex-direction: column;
+  justify-content: center;
+}
+.cards{
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 592px) {
+  .meal-container {
+    flex-flow: row wrap;
+  }
+}
+@media (min-width: 756px) {
+  .cards{
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
 </style>
