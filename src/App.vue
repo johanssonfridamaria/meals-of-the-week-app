@@ -74,7 +74,6 @@ h2 {
   font-size: 2rem;
 }
 h3 {
-  margin-bottom: 1rem;
   font-size: 1rem
 }
 .btn {
@@ -102,25 +101,12 @@ h3 {
 .mb-1 {
   margin-bottom: 1rem;
 }
-.mt-1 {
-  margin-top: 1rem;
-}
 .ml-3 {
   margin-left: 3rem;
 }
 .my-1 {
   margin-top: 1rem;
   margin-bottom: 1rem;
-}
-.mx-1 {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-.pb-1 {
-  padding-bottom: 1rem;
-}
-.pt-1 {
-  padding-top: 1rem;
 }
 
 /* Main container */
@@ -141,5 +127,9 @@ h3 {
 }
 .text-dark {
   color: #fff;
+}
+.section{
+  align-items: center;
+  margin-bottom: 1.5rem;
 }
 </style>
