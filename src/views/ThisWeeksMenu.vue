@@ -67,13 +67,13 @@ export default {
   border-radius: 0.5rem;
   box-shadow: 5px 5px 10px 0 #333;
   padding: 1rem 2rem 2rem 2rem;
-  color: #000;
+  color: #333;
   width: 100%;
   max-width: 40rem;
 }
 .menu-row {
   height: 4.5rem;
-  border-bottom: 0.2rem solid #000;
+  border-bottom: 0.2rem solid #333;
   display: flex;
   align-content: center;
   align-items: center;
