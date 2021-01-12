@@ -1,5 +1,5 @@
 <template>
-  <div class="random d-flex column">
+  <div class="d-flex column section">
     <h2 class="mb-1">Difficult to choose?</h2>
     <button class="btn">Add a random meal!</button>
   </div>
@@ -10,7 +10,4 @@ export default {};
 </script>
 
 <style scoped>
-.random{
-  align-items: center;
-}
 </style>
