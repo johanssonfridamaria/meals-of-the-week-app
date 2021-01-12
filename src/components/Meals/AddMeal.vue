@@ -1,14 +1,14 @@
 <template>
   <div class="d-flex column section">
     <h2 class="text-center mb-1">Don't see anything you like? Add meals:</h2>
-    <div class="input-group d-flex">
+    <div class="input-group">
       <input
         type="text"
         id="name"
         v-model="name"
         placeholder="Insert name of meal"
       />
-      <button class="btn" @click="add">Add</button>
+      <button class="btn btn-add" @click="add">Add</button>
     </div>
   </div>
 </template>
@@ -34,5 +34,16 @@ export default {
 </script>
 
 <style scoped>
-
+input {
+  padding: 0.7rem 0.7rem;
+  border-radius: 0.5rem 0 0 0.5rem;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  background: #eee;
+  color: #333;
+}
+.btn-add {
+  border-radius: 0 0.5rem 0.5rem 0;
+}
 </style>
