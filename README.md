@@ -10,8 +10,5 @@ The other page is the weekly menu where the user can remove one or all meals.
 
 The app also has the functionality to change between a ligth and dark theme.
 
-
-The app is not finished yet. The design is not ready and the functionality is not done.
-
 ## Tech used: 
 VUE, VUEX, HTML, CSS, JAVASCRIPT
