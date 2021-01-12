@@ -3,8 +3,10 @@ export default {
   state: {
     meals: [
       {id:1, name: 'PalakPaneer'},
-      {id:2, name: 'Pasta'},
-      {id:3, name: 'Pizza'}
+      {id:2, name: 'Spagetti & Köttfärsås'},
+      {id:3, name: 'Pizza'},
+      {id:3, name: 'Potatis & Pannbiff'},
+      {id:3, name: 'Ceasarsallad'}
     ],
     menu: [],
     randomMeal: {},
@@ -31,11 +33,8 @@ export default {
       localStorage.setItem('meals', JSON.stringify(state.meals))
     },
     ADD_TO_MENU: (state, meal) =>{
-      let exists = state.menu.find(x => x.id === meal.id)
-      if(!exists){
         state.menu.push(meal)
         localStorage.setItem('menu', JSON.stringify(state.menu))
-      }
     },
     DEL_FROM_MENU: (state, id) => {
       state.menu = state.menu.filter(meal => meal.id !== id)
