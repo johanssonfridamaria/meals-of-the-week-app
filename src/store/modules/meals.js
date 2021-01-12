@@ -5,8 +5,8 @@ export default {
       {id:1, name: 'PalakPaneer'},
       {id:2, name: 'Spagetti & Köttfärsås'},
       {id:3, name: 'Pizza'},
-      {id:3, name: 'Potatis & Pannbiff'},
-      {id:3, name: 'Ceasarsallad'}
+      {id:4, name: 'Potatis & Pannbiff'},
+      {id:5, name: 'Ceasarsallad'}
     ],
     menu: [],
     randomMeal: {},
@@ -49,7 +49,7 @@ export default {
       }
     },
     CLEAR_MENU: (state) => {
-      state.menu= '';
+      state.menu= [];
       localStorage.setItem('menu', JSON.stringify(state.menu))
     }
   },
