@@ -14,17 +14,17 @@
     </div>
 
     <div class="d-flex column menu">
-      <div class="menu-row">
-        <h2>Clear list</h2>
+      <div class="menu-row" v-if="menu.length">
+        <h2>Clear menu</h2>
         <button class="btn round-btn d-flex" @click="clearMenu()">
           <i class="far fa-trash-alt"> </i>
         </button>
       </div>
-      <div class="menu-row" v-for="meal in menu" :key="meal.id">
-        <div v-if="!menu">
-          <h2>You have not added any meals yet</h2>
-        </div>
-        <mealInMenu v-else :meal="meal" />
+      <div v-if="!menu.length" class="menu-row">
+          <h2>Please add meals to the menu</h2>
+      </div>
+      <div v-else class="menu-row" v-for="meal in menu" :key="meal.id">
+        <mealInMenu :meal="meal" />
       </div>
       <div class="menu-row"></div>
       <div class="menu-row"></div>
@@ -44,7 +44,7 @@ export default {
     RandomMeal,
   },
   methods: {
-    ...mapActions(['clearMenu'])
+    ...mapActions(['clearMenu']),
   },
   computed: {
     ...mapGetters(['menu']),
@@ -72,10 +72,11 @@ export default {
   max-width: 40rem;
 }
 .menu-row {
-  height: 4.5rem;
+  height: 5.5rem;
   border-bottom: 0.2rem solid #333;
   display: flex;
   align-content: center;
   align-items: center;
 }
+
 </style>
