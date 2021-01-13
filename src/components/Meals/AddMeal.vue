@@ -55,7 +55,7 @@ input {
 @media (min-width: 592px) {
   .input-group {
     flex-direction: row;
-    max-width: 25rem;
+    max-width: 40rem;
   }
   input {
     border-radius: 0.5rem 0 0 0.5rem;
