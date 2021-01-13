@@ -6,7 +6,6 @@
     </div>
     <div class="cards d-flex column">
       <add-meal />
-      <random-meal />
     </div>
     <div class="d-flex meal-container">
       <mealCard
@@ -22,20 +21,15 @@
 import MealCard from '../components/Meals/MealCard';
 import { mapGetters } from 'vuex';
 import AddMeal from '../components/Meals/AddMeal.vue';
-import RandomMeal from '../components/Meals/RandomMeal.vue';
 
 export default {
   name: 'Meals',
   components: {
     MealCard,
     AddMeal,
-    RandomMeal,
   },
-  // methods: {
-  //   ...mapActions(['delMeal']),
-  // },
   computed: {
-    ...mapGetters(['meals', 'randomMeal', 'isDarkTheme']),
+    ...mapGetters(['meals', 'isDarkTheme']),
   },
 };
 </script>
@@ -52,12 +46,6 @@ export default {
 @media (min-width: 592px) {
   .meal-container {
     flex-flow: row wrap;
-  }
-}
-@media (min-width: 756px) {
-  .cards{
-    flex-direction: row;
-    justify-content: space-evenly;
   }
 }
 </style>
