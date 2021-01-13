@@ -41,11 +41,13 @@ export default {
       localStorage.setItem('menu', JSON.stringify(state.menu))
     },
     ADD_RANDOM: (state) => {
-      state.randomMeal = state.meals[Math.floor(Math.random() * state.meals.length)]
-      let exists = state.menu.find(x => x.id === state.randomMeal.id)
-      if(!exists){
-        state.menu.push(state.randomMeal)
-        localStorage.setItem('menu', JSON.stringify(state.menu))
+      if(state.meals.length) {
+        state.randomMeal = state.meals[Math.floor(Math.random() * state.meals.length)]
+        let exists = state.menu.find(x => x.id === state.randomMeal.id)
+        if(!exists){
+          state.menu.push(state.randomMeal)
+          localStorage.setItem('menu', JSON.stringify(state.menu))
+        }
       }
     },
     CLEAR_MENU: (state) => {
