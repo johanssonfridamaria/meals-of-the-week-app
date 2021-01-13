@@ -30,7 +30,9 @@ export default {
     },
     DEL_MEAL: (state, id) => {
       state.meals = state.meals.filter(meal => meal.id !== id)
+      state.menu = state.menu.filter(meal => meal.id !== id)
       localStorage.setItem('meals', JSON.stringify(state.meals))
+      localStorage.setItem('menu', JSON.stringify(state.menu))
     },
     ADD_TO_MENU: (state, meal) =>{
         state.menu.push(meal)
