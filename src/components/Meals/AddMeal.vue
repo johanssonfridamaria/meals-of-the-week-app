@@ -1,15 +1,15 @@
 <template>
   <div class="d-flex column section">
     <h2 class="text-center mb-1">Don't see anything you like? Add meals:</h2>
-    <div class="input-group d-flex column">
+    <form @submit="add" class="input-group d-flex column">
       <input
         type="text"
         id="name"
         v-model="name"
         placeholder="Insert name of meal"
       />
-      <button class="btn btn-add" @click="add">Add</button>
-    </div>
+      <button class="btn btn-add" type="submit">Add</button>
+    </form>
   </div>
 </template>
 
